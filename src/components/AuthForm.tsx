@@ -126,7 +126,7 @@ const AuthForm = ({ type }: AuthFormProps) => {
         </div>
         <Form {...form}>
           <form
-            onSubmit={form.handleSubmit(isSignUp ? handleLogin : handleSignup)}
+            onSubmit={form.handleSubmit(isSignUp ? handleSignup : handleLogin)}
             className="space-y-8"
           >
             <FormItem
