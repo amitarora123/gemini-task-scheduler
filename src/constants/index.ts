@@ -1,0 +1,167 @@
+export const demoTaskList: TaskPrompt[] = [
+  {
+    id: 1,
+    tasks: [
+      {
+        id: 1,
+        taskPromptId: 1,
+        text: "Learn the fundamentals of React components and JSX",
+        done: false,
+      },
+      {
+        id: 2,
+        taskPromptId: 1,
+        text: "Set up a new React project using Vite or Create React App",
+        done: false,
+      },
+      {
+        id: 3,
+        taskPromptId: 1,
+        text: "Create a reusable Button component and pass props",
+        done: false,
+      },
+      {
+        id: 4,
+        taskPromptId: 1,
+        text: "Understand state and hooks by building a simple counter",
+        done: false,
+      },
+    ],
+    topic: "learn React",
+    category: "Technical",
+    createdAt: new Date("2025-06-20T10:00:00Z"),
+    updatedAt: new Date("2025-06-20T10:00:00Z"),
+  },
+  {
+    id: 2,
+    tasks: [
+      {
+        id: 5,
+        taskPromptId: 2,
+        text: "Explore the basics of REST API design principles",
+        done: false,
+      },
+      {
+        id: 6,
+        taskPromptId: 2,
+        text: "Use Postman to test common HTTP methods (GET, POST, etc.)",
+        done: false,
+      },
+      {
+        id: 7,
+        taskPromptId: 2,
+        text: "Build a simple CRUD API using Express.js",
+        done: false,
+      },
+      {
+        id: 8,
+        taskPromptId: 2,
+        text: "Implement error handling and route validation",
+        done: false,
+      },
+    ],
+    createdAt: new Date("2025-06-21T14:30:00Z"),
+    updatedAt: new Date("2025-06-21T15:00:00Z"),
+    topic: "Backend with Express",
+    category: "Technical",
+  },
+  {
+    id: 3,
+    tasks: [
+      {
+        id: 9,
+        taskPromptId: 3,
+        text: "Understand what Docker is and why it's useful",
+        done: false,
+      },
+      {
+        id: 10,
+        taskPromptId: 3,
+        text: "Install Docker and run your first container",
+        done: false,
+      },
+      {
+        id: 11,
+        taskPromptId: 3,
+        text: "Write a Dockerfile for a Node.js app",
+        done: false,
+      },
+      {
+        id: 12,
+        taskPromptId: 3,
+        text: "Build and run your image locally using Docker CLI",
+        done: false,
+      },
+    ],
+    createdAt: new Date("2025-06-22T09:45:00Z"),
+    updatedAt: new Date("2025-06-22T09:55:00Z"),
+    topic: "learn docker",
+    category: "Technical",
+  },
+  {
+    id: 4,
+    tasks: [
+      {
+        id: 13,
+        taskPromptId: 4,
+        text: "Learn the basics of Git branching and merging",
+        done: false,
+      },
+      {
+        id: 14,
+        taskPromptId: 4,
+        text: "Create a new repository and commit changes",
+        done: false,
+      },
+      {
+        id: 15,
+        taskPromptId: 4,
+        text: "Use `git log`, `git diff`, and `git blame` for history tracking",
+        done: false,
+      },
+      {
+        id: 16,
+        taskPromptId: 4,
+        text: "Resolve a merge conflict using a code editor",
+        done: false,
+      },
+    ],
+    createdAt: new Date("2025-06-23T11:10:00Z"),
+    updatedAt: new Date("2025-06-23T11:10:00Z"),
+    topic: "learn git",
+    category: "Technical",
+  },
+  {
+    id: 5,
+    tasks: [
+      {
+        id: 17,
+        taskPromptId: 5,
+        text: "Understand SQL basics: SELECT, INSERT, UPDATE, DELETE",
+        done: false,
+      },
+      {
+        id: 18,
+        taskPromptId: 5,
+        text: "Set up a PostgreSQL database locally",
+        done: false,
+      },
+      {
+        id: 19,
+        taskPromptId: 5,
+        text: "Write a query to join two tables",
+        done: false,
+      },
+      {
+        id: 20,
+        taskPromptId: 5,
+        text: "Practice subqueries and indexing for performance",
+        done: false,
+      },
+    ],
+    createdAt: new Date("2025-06-24T08:00:00Z"),
+    updatedAt: new Date("2025-06-24T08:30:00Z"),
+    topic: "learn sql",
+    category: "Technical",
+  },
+];

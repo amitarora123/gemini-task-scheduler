@@ -1,12 +1,12 @@
 "use server";
 
 import { cookies } from "next/headers";
-import { auth } from "../../firebase/admin";
+import { auth } from "../firebase/admin";
 import { db } from "@/db/drizzle";
-import { users } from "@/db/schema";
+import { User } from "@/db/schema";
 import { eq } from "drizzle-orm";
 import { signOut } from "firebase/auth";
-import { auth as clientAuth } from "../../firebase/client";
+import { auth as clientAuth } from "../firebase/client";
 
 const ONE_WEEK = 60 * 60 * 24 * 7;
 export async function setSessionCookie(idToken: string) {
@@ -32,13 +32,13 @@ export async function signUp(params: SignUpParams) {
 
     const existingUserById = await db
       .select()
-      .from(users)
-      .where(eq(users.id, id));
+      .from(User)
+      .where(eq(User.id, id));
 
     const existingUserByEmail = await db
       .select()
-      .from(users)
-      .where(eq(users.email, email));
+      .from(User)
+      .where(eq(User.email, email));
 
     if (existingUserById[0] || existingUserByEmail[0]) {
       return {
@@ -47,7 +47,7 @@ export async function signUp(params: SignUpParams) {
       };
     }
 
-    await db.insert(users).values({
+    await db.insert(User).values({
       id,
       email,
     });
@@ -99,11 +99,10 @@ export async function getCurrentUser(): Promise<User | null> {
 
   try {
     const decodedClaims = await auth.verifySessionCookie(sessionCookie, true);
-    console.log(decodedClaims);
     const userRecord = await db
       .select()
-      .from(users)
-      .where(eq(users.id, decodedClaims.uid));
+      .from(User)
+      .where(eq(User.id, decodedClaims.uid));
 
     if (!userRecord[0]) return null;
 
@@ -145,9 +144,9 @@ export async function googleLogin({
 }) {
   const { email, id } = params;
 
-  const existedUser = await db.select().from(users).where(eq(users.id, id));
+  const existedUser = await db.select().from(User).where(eq(User.id, id));
   if (!existedUser[0]) {
-    await db.insert(users).values({
+    await db.insert(User).values({
       email,
       id,
     });

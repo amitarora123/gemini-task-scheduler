@@ -18,7 +18,7 @@ const FormItem = <T extends FieldValues>({control, name, type, placeholder, labe
         name={name}
         render={({ field }) => (
         <ShadFormItem>
-            <FormLabel>{label}</FormLabel>
+            <FormLabel className="text-primary-orange">{label}</FormLabel>
             <FormControl>
             <Input type={type} placeholder={placeholder} {...field} />
             </FormControl>
